@@ -1,0 +1,532 @@
+/* ================= GENERAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background:
+    linear-gradient(120deg,
+      #0f0f1a,
+      #1c1c2e);
+  color: white;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ================= BACKGROUND EFFECT ================= */
+body::before {
+  content: "";
+  position: fixed;
+  top: 10%;
+  right: -150px;
+  width: 450px;
+  height: 450px;
+  background:
+    radial-gradient(circle,
+      rgba(255, 168, 80, 0.22),
+      transparent 70%);
+
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: -150px;
+  width: 450px;
+  height: 450px;
+  background:
+    radial-gradient(circle,
+      rgba(255, 168, 80, 0.18),
+      transparent 70%);
+
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ================= NAVBAR ================= */
+.custom-navbar {
+  background:
+    rgba(15, 15, 26, 0.92);
+  backdrop-filter: blur(15px);
+  border-bottom:
+    1px solid rgba(255, 153, 51, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+}
+
+.custom-navbar .navbar-brand {
+  color: #ff9933;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.custom-navbar .nav-link {
+  color: white;
+  margin-left: 15px;
+  transition: 0.3s;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #ff9933;
+}
+
+/* ================= HERO ================= */
+.hero-section {
+  position: relative;
+}
+
+.slider-img {
+  height: 72vh;
+  min-height: 420px;
+  object-fit: cover;
+  filter: brightness(0.48);
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.custom-caption {
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+}
+
+.custom-caption h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  margin: 18px 0 12px;
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.custom-caption p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #eee;
+  margin-bottom: 25px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 30px;
+  background:
+    rgba(255, 153, 51, 0.15);
+  border:
+    1px solid rgba(255, 153, 51, 0.5);
+  color: #ffb45c;
+  font-size: 0.9rem;
+}
+
+.hero-btn {
+  border: 1px solid #ff9933;
+  color: white;
+  border-radius: 25px;
+  padding: 9px 22px;
+  transition: 0.3s;
+
+}
+
+
+.hero-btn:hover {
+  background: #ff9933;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+/* ================= SECTION ================= */
+.section-heading {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-label {
+  display: inline-block;
+  color: #ff9933;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 75px;
+  height: 3px;
+  margin:12px auto;
+  background:
+    linear-gradient(to right,
+      #ff9933,
+      #ff5e62);
+  border-radius: 10px;
+}
+
+.section-heading p {
+  color: #bbb;
+}
+
+/* ================= CARDS ================= */
+.chapter-card {
+  border-radius: 20px;
+  background:
+    rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(15px);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.chapter-card:hover {
+  transform: translateY(-8px);
+  border-color:
+    rgba(255, 153, 51, 0.65);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.chapter-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.chapter-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  filter: brightness(0.78);
+  transition: 0.4s;
+}
+
+.chapter-card:hover .chapter-img {
+  transform: scale(1.06);
+  filter: brightness(0.95);
+}
+
+.chapter-number {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background:
+    rgba(15, 15, 26, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ff9933;
+  border:
+    1px solid rgba(255, 153, 51, 0.4);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.chapter-card .card-body {
+  padding: 22px;
+}
+
+.chapter-card .card-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.chapter-card .card-text {
+  color: #ff9933;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.chapter-description {
+  color: #bbb;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-outline-light {
+  border-radius: 20px;
+  padding: 7px 17px;
+  transition: 0.3s;
+}
+
+.btn-outline-light:hover {
+  background: #ff9933;
+  border-color: #ff9933;
+  color: #111;
+}
+
+/* ================= CHAPTER PAGE ================= */
+.chapter-box {
+  background:
+    rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+  padding: 35px;
+  box-shadow:
+    0 0 40px rgba(255, 153, 51, 0.1);
+}
+
+.chapter-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.chapter-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 10px 0;
+}
+
+.chapter-header h4 {
+  color: #ff9933;
+  font-weight: 400;
+}
+
+.chapter-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.info-item {
+  min-width: 180px;
+  padding: 15px 20px;
+  text-align: center;
+  border-radius: 15px;
+  background:
+    rgba(255, 255, 255, 0.05);
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item span {
+  display: block;
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.info-item strong {
+  color: #ff9933;
+  font-size: 0.95rem;
+}
+
+.chapter-text h5 {
+  color: #ff9933;
+  margin-top: 25px;
+}
+
+.chapter-text p {
+  color: #ddd;
+  line-height: 1.8;
+}
+
+/* ================= VERSES ================= */
+.verse-count {
+  color: #ff9933;
+  font-size: 0.9rem;
+}
+
+.verse-card {
+  border-radius: 16px;
+  background:
+    rgba(255, 255, 255, 0.05);
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.verse-card:hover {
+  transform: translateX(5px);
+  border-color:
+    rgba(255, 153, 51, 0.55);
+  background:
+    rgba(255, 153, 51, 0.07);
+}
+
+.verse-card h6 {
+  color: #ff9933;
+  margin: 0;
+}
+
+.verse-card span {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.verse-card p {
+  color: #ddd;
+  line-height: 1.7;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* ================= MODAL ================= */
+.custom-modal {
+  background:
+    rgba(20, 20, 30, 0.97);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  color: white;
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+}
+
+.custom-modal .modal-title {
+  color: #ff9933;
+}
+
+.verse-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #ff9933;
+  background:
+    rgba(255, 153, 51, 0.1);
+  border:
+    1px solid rgba(255, 153, 51, 0.3);
+}
+
+.verse-detail h5 {
+  color: #ff9933;
+  margin-top: 20px;
+}
+
+.sanskrit-text {
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #eee;
+}
+
+.translation-box,
+.commentary-box {
+  padding: 15px;
+  border-radius: 12px;
+  background:
+    rgba(255, 255, 255, 0.04);
+  border-left:
+    3px solid #ff9933;
+}
+
+.translation-box strong,
+.commentary-box strong {
+  color: #ffb45c;
+}
+
+.translation-box p,
+.commentary-box p {
+  color: #ccc;
+  line-height: 1.7;
+  margin-top: 7px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  margin-top: 40px;
+  padding: 40px 0 25px;
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+  background:
+    rgba(0, 0, 0, 0.15);
+}
+
+.footer h5 {
+  color: #ff9933;
+}
+
+.footer p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.footer-copy {
+  margin-top: 20px;
+  font-size: 0.8rem !important;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .slider-img {
+    height: 55vh;
+    min-height: 400px;
+  }
+
+  .custom-caption {
+    width: 90%;
+  }
+
+  .custom-caption h1 {
+    font-size: 2.4rem;
+  }
+
+  .custom-caption p {
+    font-size: 0.9rem;
+  }
+
+  .chapter-img {
+    height: 220px;
+  }
+
+  .chapter-box {
+    padding: 22px;
+  }
+
+  .chapter-header h1 {
+    font-size: 2rem;
+  }
+
+  .info-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-img {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .custom-caption h1 {
+    font-size: 2rem;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+  }
+
+  .hero-btn {
+    font-size: 0.85rem;
+  }
+}
